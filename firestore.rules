@@ -1,0 +1,109 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() { return request.auth != null; }
+    function userDoc() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid));
+    }
+    function userRole() { return userDoc().data.role; }
+    function isAdmin() { return signedIn() && userRole() == "admin"; }
+    function isStaffOrAdmin() {
+      return signedIn() && (userRole() == "staff" || userRole() == "admin");
+    }
+
+    /* ── USERS ── */
+    match /users/{uid} {
+      allow read: if signedIn();
+      allow write: if isAdmin();
+      allow create: if isStaffOrAdmin();
+      allow update: if signedIn()
+        && request.auth.uid == uid
+        && !("role"    in request.resource.data.diff(resource.data).affectedKeys())
+        && !("blocked" in request.resource.data.diff(resource.data).affectedKeys());
+    }
+
+    /* ── BOOKS ── */
+    match /books/{bookId} {
+      allow read: if signedIn();
+      allow create, update, delete: if isStaffOrAdmin();
+    }
+
+    /* ── SETTINGS ── */
+    match /settings/{id} {
+      allow read: if signedIn();
+      allow write: if isStaffOrAdmin();
+    }
+
+    /* ── REVIEWS ── */
+    match /reviews/{reviewId} {
+      allow read: if signedIn();
+      allow create: if signedIn()
+        && request.resource.data.studentUid == request.auth.uid;
+      allow update: if signedIn()
+        && resource.data.studentUid == request.auth.uid;
+      allow delete: if signedIn()
+        && (resource.data.studentUid == request.auth.uid || isStaffOrAdmin());
+    }
+
+    /* ── ISSUE REQUESTS ── */
+    match /issue_requests/{id} {
+      allow get: if signedIn()
+        && (resource.data.studentUid == request.auth.uid || isStaffOrAdmin());
+      allow list: if signedIn();
+      allow create: if signedIn()
+        && request.resource.data.studentUid == request.auth.uid
+        && request.resource.data.status == "pending";
+      allow update: if signedIn()
+        && (isStaffOrAdmin()
+          || (request.auth.uid == resource.data.studentUid
+            && request.resource.data.returnRequested == true
+            && request.resource.data.status == resource.data.status));
+      allow delete: if isStaffOrAdmin();
+    }
+
+    /* ── ANNOUNCEMENTS ── */
+    match /announcements/{id} {
+      allow read: if signedIn();
+      allow write: if isStaffOrAdmin();
+    }
+
+    /* ── RESOURCES ── */
+    match /resources/{id} {
+      allow read: if signedIn();
+      allow write: if isStaffOrAdmin();
+    }
+
+    /* ── EBOOKS ── */
+    match /ebooks/{ebookId} {
+      allow read: if signedIn();
+      allow write: if isStaffOrAdmin();
+    }
+
+    /* ── NOTIFICATIONS ── */
+    match /notifications/{notifId} {
+      allow read: if signedIn()
+        && (resource.data.toUid == request.auth.uid || isStaffOrAdmin());
+      allow create: if isStaffOrAdmin();
+      allow update: if signedIn()
+        && resource.data.toUid == request.auth.uid;
+      allow delete: if isStaffOrAdmin();
+    }
+
+    /* ── HELPDESK THREADS ── */
+    match /helpdesk_threads/{threadId} {
+      // Student can read/write their own thread; staff/admin can read/write all
+      allow read: if signedIn()
+        && (resource.data.studentUid == request.auth.uid || isStaffOrAdmin());
+      allow create: if signedIn();
+      allow update: if signedIn()
+        && (resource.data.studentUid == request.auth.uid || isStaffOrAdmin());
+
+      // Messages subcollection
+      match /messages/{msgId} {
+        allow read: if signedIn();
+        allow create: if signedIn();
+        allow update, delete: if isStaffOrAdmin();
+      }
+    }
+  }
+}

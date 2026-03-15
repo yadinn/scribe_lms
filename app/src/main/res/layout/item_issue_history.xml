@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="12dp"
+    
+    android:layout_marginBottom="8dp">
+
+    <!-- Book Title -->
+    <TextView
+        android:id="@+id/tvBookTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Book Name"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black" />
+
+    <!-- Student Name -->
+    <TextView
+        android:id="@+id/tvStudentName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Student: --"/>
+
+    <TextView
+        android:id="@+id/tvStudentRegNo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reg No: --"/>
+
+    <TextView
+        android:id="@+id/tvContact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Contact: --"
+        android:textSize="13sp"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="2dp"/>
+    <!-- Status -->
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Status: issued"
+        android:layout_marginTop="4dp"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/tvFine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fine"
+        android:textStyle="bold"
+        android:layout_marginTop="4dp"
+        android:visibility="gone"/>
+    <!-- Dates -->
+    <TextView
+        android:id="@+id/tvDates"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Issued: -- | Returned: --"
+        android:layout_marginTop="4dp"
+        android:textSize="12sp"
+        android:textColor="?android:attr/textColorSecondary" />
+
+</LinearLayout>

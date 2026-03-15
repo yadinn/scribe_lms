@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Brand -->
+    <color name="brand_primary">#1A237E</color>
+    <color name="brand_primary_dark">#0D1B6E</color>
+    <color name="brand_accent">#E8F0FE</color>
+    <color name="brand_surface">#F8F9FF</color>
+
+    <!-- Status colors -->
+    <color name="status_pending">#FF8F00</color>
+    <color name="status_approved">#1565C0</color>
+    <color name="status_issued">#2E7D32</color>
+    <color name="status_returned">#6A1B9A</color>
+    <color name="status_overdue">#B71C1C</color>
+    <color name="status_expired">#757575</color>
+
+    <!-- UI -->
+    <color name="white">#FFFFFFFF</color>
+    <color name="black">#FF000000</color>
+    <color name="text_primary">#1A1A2E</color>
+    <color name="text_secondary">#5C6370</color>
+    <color name="card_bg">#FFFFFF</color>
+    <color name="divider">#E8EAED</color>
+
+    <!-- Semantic -->
+    <color name="error">#B00020</color>
+    <color name="success">#1B5E20</color>
+    <color name="warning">#E65100</color>
+    <color name="info">#0D47A1</color>
+</resources>

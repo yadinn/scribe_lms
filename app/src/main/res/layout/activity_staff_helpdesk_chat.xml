@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="?android:attr/colorBackground">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:orientation="vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="14dp"
+        android:paddingBottom="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Student Chat"
+                android:textColor="#FFFFFF"
+                android:textSize="17sp"
+                android:textStyle="bold"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnViewHistory"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:text="📜 History"
+                android:textSize="11sp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                app:strokeColor="#FFFFFF"
+                android:textColor="#FFFFFF"
+                app:cornerRadius="16dp"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvStudentStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#CCE3F1"
+            android:textSize="11sp"
+            android:layout_marginTop="3dp"
+            android:visibility="gone"/>
+    </LinearLayout>
+
+    <!-- Typing indicator -->
+    <TextView
+        android:id="@+id/tvTypingIndicator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="6dp"
+        android:paddingBottom="6dp"
+        android:text="Student is typing..."
+        android:textSize="12sp"
+        android:textColor="?attr/colorPrimary"
+        android:background="?attr/colorSurfaceVariant"
+        android:visibility="gone"/>
+
+    <!-- Messages list -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvMessages"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="8dp"
+        android:clipToPadding="false"/>
+
+    <!-- Quick template chips -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:background="?attr/colorSurface"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:paddingTop="6dp"
+        android:paddingBottom="6dp">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView android:id="@+id/chipTemplate1" android:layout_width="wrap_content" android:layout_height="30dp" android:text="✅ Approved" android:gravity="center" android:paddingStart="10dp" android:paddingEnd="10dp" android:layout_marginEnd="6dp" android:textSize="11sp" android:textColor="?attr/colorPrimary" android:background="@drawable/chip_quick_reply"/>
+            <TextView android:id="@+id/chipTemplate2" android:layout_width="wrap_content" android:layout_height="30dp" android:text="⏰ Due soon" android:gravity="center" android:paddingStart="10dp" android:paddingEnd="10dp" android:layout_marginEnd="6dp" android:textSize="11sp" android:textColor="?attr/colorPrimary" android:background="@drawable/chip_quick_reply"/>
+            <TextView android:id="@+id/chipTemplate3" android:layout_width="wrap_content" android:layout_height="30dp" android:text="😊 Anything else?" android:gravity="center" android:paddingStart="10dp" android:paddingEnd="10dp" android:layout_marginEnd="6dp" android:textSize="11sp" android:textColor="?attr/colorPrimary" android:background="@drawable/chip_quick_reply"/>
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <!-- Input bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:background="?attr/colorSurface"
+        android:elevation="6dp"
+        android:gravity="center_vertical">
+
+        <EditText
+            android:id="@+id/etMessage"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Reply to student..."
+            android:maxLines="3"
+            android:inputType="textMultiLine|textCapSentences"
+            android:background="@drawable/input_bg"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:textSize="14sp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSend"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="8dp"
+            android:text="➤"
+            android:textSize="16sp"
+            android:padding="0dp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            app:cornerRadius="22dp"/>
+    </LinearLayout>
+</LinearLayout>

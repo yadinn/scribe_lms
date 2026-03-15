@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="?android:attr/colorBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/header_gradient"
+        android:orientation="vertical"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:paddingTop="48dp"
+        android:paddingBottom="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="STAFF PORTAL"
+            android:textColor="#B3FFFFFF"
+            android:textSize="11sp"
+            android:letterSpacing="0.2"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🏫 Scribe LMS"
+            android:textColor="@color/white"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:layout_marginTop="2dp"/>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- ISSUE MANAGEMENT -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="📋  ISSUE MANAGEMENT" android:textColor="?android:attr/textColorSecondary"
+                android:textSize="11sp" android:textStyle="bold" android:letterSpacing="0.15"
+                android:layout_marginBottom="10dp"/>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="10dp">
+                <com.google.android.material.card.MaterialCardView android:layout_width="0dp" android:layout_height="110dp" android:layout_weight="1" android:layout_marginEnd="6dp" app:cardCornerRadius="16dp" app:cardElevation="3dp" app:cardBackgroundColor="#FEF9C3">
+                    <LinearLayout android:id="@+id/btnPendingRequests" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:gravity="center" android:background="?attr/selectableItemBackground">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="📥" android:textSize="32sp"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Pending" android:textSize="11sp" android:textColor="#92400E" android:textStyle="bold" android:layout_marginTop="6dp"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+                <com.google.android.material.card.MaterialCardView android:layout_width="0dp" android:layout_height="110dp" android:layout_weight="1" android:layout_marginStart="6dp" app:cardCornerRadius="16dp" app:cardElevation="3dp" app:cardBackgroundColor="#F0FDF4">
+                    <LinearLayout android:id="@+id/btnScanQr" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:gravity="center" android:background="?attr/selectableItemBackground">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="📷" android:textSize="32sp"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Scan QR" android:textSize="11sp" android:textColor="#15803D" android:textStyle="bold" android:layout_marginTop="6dp"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="14dp">
+                <com.google.android.material.card.MaterialCardView android:layout_width="0dp" android:layout_height="110dp" android:layout_weight="1" android:layout_marginEnd="6dp" app:cardCornerRadius="16dp" app:cardElevation="3dp" app:cardBackgroundColor="#EFF6FF">
+                    <LinearLayout android:id="@+id/btnIssuedBooks" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:gravity="center" android:background="?attr/selectableItemBackground">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="📚" android:textSize="32sp"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Issued Books" android:textSize="11sp" android:textColor="#1D4ED8" android:textStyle="bold" android:layout_marginTop="6dp"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+                <com.google.android.material.card.MaterialCardView android:layout_width="0dp" android:layout_height="110dp" android:layout_weight="1" android:layout_marginStart="6dp" app:cardCornerRadius="16dp" app:cardElevation="3dp" app:cardBackgroundColor="#FFF1F2">
+                    <LinearLayout android:id="@+id/btnOverdueBooks" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:gravity="center" android:background="?attr/selectableItemBackground">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🚨" android:textSize="32sp"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Overdue" android:textSize="11sp" android:textColor="#BE123C" android:textStyle="bold" android:layout_marginTop="6dp"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+            <!-- CATALOG -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="📖  CATALOG" android:textColor="?android:attr/textColorSecondary"
+                android:textSize="11sp" android:textStyle="bold" android:letterSpacing="0.15"
+                android:layout_marginBottom="10dp"/>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="14dp">
+                <com.google.android.material.card.MaterialCardView android:layout_width="0dp" android:layout_height="110dp" android:layout_weight="1" android:layout_marginEnd="6dp" app:cardCornerRadius="16dp" app:cardElevation="3dp" app:cardBackgroundColor="#FAF5FF">
+                    <LinearLayout android:id="@+id/btnManageBooks" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:gravity="center" android:background="?attr/selectableItemBackground">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🛠️" android:textSize="32sp"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Manage Books" android:textSize="11sp" android:textColor="#7C3AED" android:textStyle="bold" android:layout_marginTop="6dp"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+                <com.google.android.material.card.MaterialCardView android:layout_width="0dp" android:layout_height="110dp" android:layout_weight="1" android:layout_marginStart="6dp" app:cardCornerRadius="16dp" app:cardElevation="3dp" app:cardBackgroundColor="#EFF6FF">
+                    <LinearLayout android:id="@+id/btnManageEBooks" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:gravity="center" android:background="?attr/selectableItemBackground">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="📘" android:textSize="32sp"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="E-Books" android:textSize="11sp" android:textColor="#1D4ED8" android:textStyle="bold" android:layout_marginTop="6dp"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+            <!-- STUDENTS & HISTORY - list style -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="👥  STUDENTS &amp; HISTORY" android:textColor="?android:attr/textColorSecondary"
+                android:textSize="11sp" android:textStyle="bold" android:letterSpacing="0.15"
+                android:layout_marginBottom="10dp"/>
+
+            <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="6dp" app:cardCornerRadius="12dp" app:cardElevation="2dp" app:cardBackgroundColor="?attr/colorSurface">
+                <LinearLayout android:id="@+id/btnViewStudents" android:layout_width="match_parent" android:layout_height="52dp" android:orientation="horizontal" android:gravity="center_vertical" android:paddingStart="16dp" android:paddingEnd="16dp" android:background="?attr/selectableItemBackground">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="👥" android:textSize="18sp"/>
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="View Students" android:textSize="14sp" android:textColor="?android:attr/textColorPrimary" android:paddingStart="12dp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="›" android:textSize="20sp" android:textColor="?android:attr/textColorSecondary"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="6dp" app:cardCornerRadius="12dp" app:cardElevation="2dp" app:cardBackgroundColor="?attr/colorSurface">
+                <LinearLayout android:id="@+id/btnAddStudent" android:layout_width="match_parent" android:layout_height="52dp" android:orientation="horizontal" android:gravity="center_vertical" android:paddingStart="16dp" android:paddingEnd="16dp" android:background="?attr/selectableItemBackground">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="➕" android:textSize="18sp"/>
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Add Student" android:textSize="14sp" android:textColor="?android:attr/textColorPrimary" android:paddingStart="12dp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="›" android:textSize="20sp" android:textColor="?android:attr/textColorSecondary"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="6dp" app:cardCornerRadius="12dp" app:cardElevation="2dp" app:cardBackgroundColor="?attr/colorSurface">
+                <LinearLayout android:id="@+id/btnIssueHistory" android:layout_width="match_parent" android:layout_height="52dp" android:orientation="horizontal" android:gravity="center_vertical" android:paddingStart="16dp" android:paddingEnd="16dp" android:background="?attr/selectableItemBackground">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🕐" android:textSize="18sp"/>
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Issue History" android:textSize="14sp" android:textColor="?android:attr/textColorPrimary" android:paddingStart="12dp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="›" android:textSize="20sp" android:textColor="?android:attr/textColorSecondary"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="6dp" app:cardCornerRadius="12dp" app:cardElevation="2dp" app:cardBackgroundColor="?attr/colorSurface">
+                <LinearLayout android:id="@+id/btnStudentReviews" android:layout_width="match_parent" android:layout_height="52dp" android:orientation="horizontal" android:gravity="center_vertical" android:paddingStart="16dp" android:paddingEnd="16dp" android:background="?attr/selectableItemBackground">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="⭐" android:textSize="18sp"/>
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Student Reviews" android:textSize="14sp" android:textColor="?android:attr/textColorPrimary" android:paddingStart="12dp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="›" android:textSize="20sp" android:textColor="?android:attr/textColorSecondary"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="6dp" app:cardCornerRadius="12dp" app:cardElevation="2dp" app:cardBackgroundColor="?attr/colorSurface">
+                <LinearLayout android:id="@+id/btnAnnouncements" android:layout_width="match_parent" android:layout_height="52dp" android:orientation="horizontal" android:gravity="center_vertical" android:paddingStart="16dp" android:paddingEnd="16dp" android:background="?attr/selectableItemBackground">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="📢" android:textSize="18sp"/>
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Announcements" android:textSize="14sp" android:textColor="?android:attr/textColorPrimary" android:paddingStart="12dp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="›" android:textSize="20sp" android:textColor="?android:attr/textColorSecondary"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="6dp" app:cardCornerRadius="12dp" app:cardElevation="2dp" app:cardBackgroundColor="?attr/colorSurface">
+                <LinearLayout android:id="@+id/btnResources" android:layout_width="match_parent" android:layout_height="52dp" android:orientation="horizontal" android:gravity="center_vertical" android:paddingStart="16dp" android:paddingEnd="16dp" android:background="?attr/selectableItemBackground">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="📎" android:textSize="18sp"/>
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Resources" android:textSize="14sp" android:textColor="?android:attr/textColorPrimary" android:paddingStart="12dp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="›" android:textSize="20sp" android:textColor="?android:attr/textColorSecondary"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="6dp" app:cardCornerRadius="12dp" app:cardElevation="2dp" app:cardBackgroundColor="#E0F2FE">
+                <LinearLayout android:id="@+id/btnHelpdeskList" android:layout_width="match_parent" android:layout_height="52dp" android:orientation="horizontal" android:gravity="center_vertical" android:paddingStart="16dp" android:paddingEnd="16dp" android:background="?attr/selectableItemBackground">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="💬" android:textSize="18sp"/>
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Student Helpdesk" android:textSize="14sp" android:textColor="#0369A1" android:textStyle="bold" android:paddingStart="12dp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="›" android:textSize="20sp" android:textColor="#0369A1"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="14dp" app:cardCornerRadius="12dp" app:cardElevation="2dp" app:cardBackgroundColor="?attr/colorSurface">
+                <LinearLayout android:id="@+id/btnFineHistory" android:layout_width="match_parent" android:layout_height="52dp" android:orientation="horizontal" android:gravity="center_vertical" android:paddingStart="16dp" android:paddingEnd="16dp" android:background="?attr/selectableItemBackground">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="💰" android:textSize="18sp"/>
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Fine History" android:textSize="14sp" android:textColor="?android:attr/textColorPrimary" android:paddingStart="12dp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="›" android:textSize="20sp" android:textColor="?android:attr/textColorSecondary"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnLogout"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:text="🚪  Sign Out"
+                android:textSize="15sp"
+                android:layout_marginBottom="24dp"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                app:strokeColor="@color/error"
+                android:textColor="@color/error"/>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

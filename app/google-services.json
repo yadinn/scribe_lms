@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "251569640329",
+    "project_id": "scribelms",
+    "storage_bucket": "scribelms.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:251569640329:android:a0b6ab5fab6ebdca87c758",
+        "android_client_info": {
+          "package_name": "com.example.scribelms"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9-DZnJnc8e-Qt--FSSgHYsJTLbqWVaFY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

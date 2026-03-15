@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permis\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\sion android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="28" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ScribeLMS"
+        tools:targetApi="34">
+
+        <!-- LAUNCHER -->
+        <activity android:name=".auth.LoginActivity" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- STUDENT -->
+        <activity android:name=".student.StudentHomeActivity" android:exported="false" />
+        <activity android:name=".student.StudentDashboardActivity" android:exported="false" />
+        <activity android:name=".student.StudentIssuedBooksActivity" android:exported="false" />
+        <activity android:name=".student.StudentReturnedBooksActivity" android:exported="false" />
+        <activity android:name=".student.StudentBookDetailsActivity" android:exported="false" />
+        <activity android:name=".student.StudentEditProfileActivity" android:exported="false" />
+        <activity android:name=".student.StudentCollectionCardActivity" android:exported="false" />
+        <activity android:name=".student.StudentRequestStatusActivity" android:exported="false" />
+        <activity android:name=".student.StudentAnnouncementsActivity" android:exported="false" />
+        <activity android:name=".student.StudentResourcesActivity" android:exported="false" />
+        <activity android:name=".student.StudentBookHistoryActivity" android:exported="false" />
+        <activity android:name=".student.StudentFineHistoryActivity" android:exported="false" />
+        <activity android:name=".student.StudentNotificationsActivity" android:exported="false" />
+        <activity android:name=".student.StudentFeedbackActivity" android:exported="false" />
+        <activity android:name=".student.StudentEBooksActivity" android:exported="false" />
+        <activity android:name=".student.StudentEBookDetailsActivity" android:exported="false" />
+
+        <!-- STAFF -->
+        <activity android:name=".staff.StaffHomeActivity" android:exported="false" />
+        <activity android:name=".staff.StaffIssueRequestsActivity" android:exported="false" />
+        <activity android:name=".staff.StaffIssuedBooksActivity" android:exported="false" />
+        <activity android:name=".staff.StaffHistoryActivity" android:exported="false" />
+        <activity android:name=".staff.StaffOverdueBooksActivity" android:exported="false" />
+        <activity android:name=".staff.StaffOverdueHistoryActivity" android:exported="false" />
+        <activity android:name=".staff.StaffEditProfileActivity" android:exported="false" />
+        <activity android:name=".staff.ManageBooksActivity" android:exported="false" />
+        <activity android:name=".staff.AddBookActivity" android:exported="false" />
+        <activity android:name=".staff.ViewStudentsActivity" android:exported="false" />
+        <activity android:name=".staff.StaffAddStudentActivity" android:exported="false" />
+        <activity android:name=".staff.StaffAnnouncementsActivity" android:exported="false" />
+        <activity android:name=".staff.StaffResourcesActivity" android:exported="false" />
+        <activity android:name=".staff.StaffFineHistoryActivity" android:exported="false" />
+        <activity android:name=".staff.StaffStudentReviewsActivity" android:exported="false" />
+        <activity android:name=".staff.StaffBookHistoryActivity" android:exported="false" />
+        <activity android:name=".staff.StaffBookReviewsActivity" android:exported="false" />
+        <activity android:name=".staff.StaffManageEBooksActivity" android:exported="false" />
+        <activity android:name=".staff.StaffAddEBookActivity" android:exported="false" />
+        <activity android:name=".staff.StaffQrScanActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:exported="false" />
+
+        
+        <!-- HELPDESK -->
+        <activity android:name=".student.StudentHelpdeskActivity" android:exported="false" />
+        <activity android:name=".helpdesk.StaffHelpdeskListActivity" android:exported="false" />
+        <activity android:name=".helpdesk.StaffHelpdeskChatActivity" android:exported="false" />
+
+        <!-- ADMIN -->
+        <activity android:name=".admin.AdminHomeActivity" android:exported="false" />
+        <activity android:name=".admin.ViewUsersActivity" android:exported="false" />
+        <activity android:name=".admin.AdminAddStaffActivity" android:exported="false" />
+        <activity android:name=".admin.AdminSettingsActivity" android:exported="false" />
+
+    </application>
+</manifest>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Header -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Manage E-Books"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="12dp" />
+
+    <!-- Add E-Book -->
+    <Button
+        android:id="@+id/btnAddEBook"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="➕ Add E-Book"
+        android:layout_marginBottom="12dp" />
+
+    <!-- E-Books List -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvEBooks"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

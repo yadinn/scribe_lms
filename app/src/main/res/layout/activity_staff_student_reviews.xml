@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="12dp">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Student Reviews"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="12dp"/>
+
+    <!-- Filters -->
+    <EditText
+        android:id="@+id/etSearchStudent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Search by student name"/>
+
+    <EditText
+        android:id="@+id/etSearchBook"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Search by book name"
+        android:layout_marginTop="6dp"/>
+
+    <!-- Reviews list -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvReviews"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="10dp"/>
+
+</LinearLayout>

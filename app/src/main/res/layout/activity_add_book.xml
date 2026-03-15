@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Add / Edit Book" android:textSize="20sp"
+            android:textStyle="bold" android:layout_marginBottom="16dp"/>
+
+        <EditText android:id="@+id/etTitle"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:hint="Book Title"/>
+
+        <EditText android:id="@+id/etAuthor"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:hint="Author" android:layout_marginTop="8dp"/>
+
+        <EditText android:id="@+id/etDescription"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:hint="Description" android:minLines="3"
+            android:gravity="top" android:layout_marginTop="8dp"/>
+
+        <EditText android:id="@+id/etCopies"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:hint="Total Copies" android:inputType="number"
+            android:layout_marginTop="8dp"/>
+
+        <EditText android:id="@+id/etShelfLocation"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:hint="📍 Shelf Location  (e.g. Row 3 / Shelf B)"
+            android:layout_marginTop="8dp"/>
+
+        <ImageView android:id="@+id/ivBookImage"
+            android:layout_width="120dp" android:layout_height="160dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp" android:layout_marginBottom="8dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_book_placeholder"/>
+
+        <EditText android:id="@+id/etImageUrl"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:hint="Paste book image URL" android:inputType="textUri"/>
+
+        <Button android:id="@+id/btnSaveBook"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="Save Book" android:layout_marginTop="20dp"/>
+    </LinearLayout>
+</ScrollView>
